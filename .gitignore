@@ -1,0 +1,6 @@
+__pycache__/
+*.log
+dataset.zip
+wandb
+yolov8n.pt
+yolov8s.pt
