@@ -1,0 +1,4 @@
+echo "yolo-training/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo "*.log" >> .gitignore
+echo "dataset.zip" >> .gitignore

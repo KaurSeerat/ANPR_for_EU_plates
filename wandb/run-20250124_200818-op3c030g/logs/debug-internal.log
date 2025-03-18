@@ -1,0 +1,16 @@
+{"time":"2025-01-24T20:08:18.3542428Z","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2025-01-24T20:08:18.3549127Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\seera\\OneDrive - University of East Anglia\\ANPR_for_EU_plates\\wandb\\run-20250124_200818-op3c030g\\logs\\debug-core.log"}
+{"time":"2025-01-24T20:08:18.4813571Z","level":"INFO","msg":"created new stream","id":"op3c030g"}
+{"time":"2025-01-24T20:08:18.4813571Z","level":"INFO","msg":"stream: started","id":"op3c030g"}
+{"time":"2025-01-24T20:08:18.4813571Z","level":"INFO","msg":"writer: Do: started","stream_id":"op3c030g"}
+{"time":"2025-01-24T20:08:18.4813571Z","level":"INFO","msg":"handler: started","stream_id":"op3c030g"}
+{"time":"2025-01-24T20:08:18.4813571Z","level":"INFO","msg":"sender: started","stream_id":"op3c030g"}
+{"time":"2025-01-24T20:08:18.8515168Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-24T20:23:00.9374284Z","level":"INFO","msg":"stream: closing","id":"op3c030g"}
+{"time":"2025-01-24T20:23:00.9374284Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-24T20:23:00.9379844Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-24T20:23:01.6620463Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-24T20:23:01.9217395Z","level":"INFO","msg":"handler: closed","stream_id":"op3c030g"}
+{"time":"2025-01-24T20:23:01.9217395Z","level":"INFO","msg":"writer: Close: closed","stream_id":"op3c030g"}
+{"time":"2025-01-24T20:23:01.9217395Z","level":"INFO","msg":"sender: closed","stream_id":"op3c030g"}
+{"time":"2025-01-24T20:23:01.9217395Z","level":"INFO","msg":"stream: closed","id":"op3c030g"}

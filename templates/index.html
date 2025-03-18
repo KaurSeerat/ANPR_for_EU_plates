@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANPR System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Automatic Number Plate Recognition</h1>
+        
+        <p class="description">
+            Upload an image of a vehicle, and our AI-powered system will detect and extract the number plate from the image. 
+            The processed image will be displayed below along with the detected plate numbers.
+        </p>
+
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" accept="image/*" required>
+            <button type="submit">Upload & Detect</button>
+        </form>
+
+        {% if uploaded_file %}
+            <div class="result-box">
+                <h2>Uploaded Image:</h2>
+                <img src="{{ url_for('uploaded_file', filename=uploaded_file) }}" class="preview">
+            </div>
+        {% endif %}
+
+        {% if processed_file %}
+            <div class="result-box">
+                <h2>Processed Image with Detected Plates:</h2>
+                <img src="{{ url_for('processed_file', filename=processed_file) }}" class="preview">
+            </div>
+
+            <div class="result-box">
+                <h3>Detected Plate Numbers:</h3>
+                {% if detected_texts %}
+                    <ul class="plate-list">
+                        {% for text in detected_texts %}
+                            <li>{{ text }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No plates detected.</p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANPR System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+ <header>
+        <h1>Automatic Number Plate Recognition</h1>
+    </header>
+<body>
+   
+
+    <div class="container" id="container">
+        <p class="description">
+            Upload an image of a vehicle, and our AI-powered system will detect and extract the number plate from the image. 
+            The processed image will be displayed below along with the detected plate numbers.
+        </p>
+
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="file">Choose a file to upload:</label>
+            <input type="file" name="file" id="file" accept="image/*" required>
+            <button type="submit">Upload & Detect</button>
+        </form>
+
+        {% if uploaded_file %}
+            <div class="result-box">
+                <h2>Uploaded Image: {{ uploaded_file }}</h2>
+                <img src="{{ url_for('uploaded_file', filename=uploaded_file) }}" class="preview">
+            </div>
+        {% endif %}
+
+        {% if processed_file %}
+            <div class="result-box">
+                <h2>Processed Image with Detected Plates:</h2>
+                <img src="{{ url_for('processed_file', filename=processed_file) }}" class="preview">
+            </div>
+
+            <div class="result-box">
+                <h3>Detected Plate Numbers:</h3>
+                {% if detected_texts %}
+                    <ul class="plate-list">
+                        {% for text in detected_texts %}
+                            <li>{{ text }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No plates detected.</p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html> -->

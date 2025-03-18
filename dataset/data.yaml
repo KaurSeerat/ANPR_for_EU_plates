@@ -1,0 +1,13 @@
+train: C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\train\images
+val: C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\valid\images
+test: C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images
+
+nc: 2
+names: ['0', '1']
+
+roboflow:
+  workspace: sumit-sharma-kcdlk
+  project: eu-license-plate-public
+  version: 1
+  license: MIT
+  url: https://universe.roboflow.com/sumit-sharma-kcdlk/eu-license-plate-public/dataset/1

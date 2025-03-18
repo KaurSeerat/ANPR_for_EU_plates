@@ -1,0 +1,518 @@
+New https://pypi.org/project/ultralytics/8.3.67 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.47 🚀 Python-3.10.8 torch-2.5.1+cpu CPU (Intel Core(TM) 7 150U)
+[34m[1mengine\trainer: [0mtask=detect, mode=train, model=yolov8n.pt, data=./dataset/data.yaml, epochs=10, time=None, patience=100, batch=16, imgsz=640, save=True, save_period=1, cache=False, device=None, workers=8, project=None, name=eu_plate_model13, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=True, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=None, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=runs\detect\eu_plate_model13
+Overriding model.yaml nc=80 with nc=2
+
+                   from  n    params  module                                       arguments
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]
+  2                  -1  1      7360  ultralytics.nn.modules.block.C2f             [32, 32, 1, True]
+  3                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]
+  4                  -1  2     49664  ultralytics.nn.modules.block.C2f             [64, 64, 2, True]
+  5                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]
+  6                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]
+  8                  -1  1    460288  ultralytics.nn.modules.block.C2f             [256, 256, 1, True]
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 12                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 15                  -1  1     37248  ultralytics.nn.modules.block.C2f             [192, 64, 1]
+ 16                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 18                  -1  1    123648  ultralytics.nn.modules.block.C2f             [192, 128, 1]
+ 19                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 21                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]
+ 22        [15, 18, 21]  1    751702  ultralytics.nn.modules.head.Detect           [2, [64, 128, 256]]
+Model summary: 225 layers, 3,011,238 parameters, 3,011,222 gradients, 8.2 GFLOPs
+
+Transferred 319/355 items from pretrained weights
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir runs\detect\eu_plate_model13', view at http://localhost:6006/
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mtrain: [0mScanning C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\train\labels.cache... 245 images, 0 backgrounds, 0 co[0m
+[34m[1mval: [0mScanning C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\valid\labels.cache... 70 images, 0 backgrounds, 0 corru[0m
+Plotting labels to runs\detect\eu_plate_model13\labels.jpg...
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+[34m[1moptimizer:[0m AdamW(lr=0.001667, momentum=0.9) with parameter groups 57 weight(decay=0.0), 64 weight(decay=0.0005), 63 bias(decay=0.0)
+[34m[1mTensorBoard: [0mmodel graph visualization added ✅
+Image sizes 640 train, 640 val
+Using 0 dataloader workers
+Logging results to [1mruns\detect\eu_plate_model13[0m
+Starting training for 10 epochs...
+Closing dataloader mosaic
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       1/10         0G      1.006      2.836      1.352         14        640: 100%|██████████| 16/16 [01:14<00:00,  4.64s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:07<00:00,  2.58s/it]
+                   all         70        232     0.0062      0.449      0.206      0.133
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       2/10         0G     0.9776      1.827      1.341         14        640: 100%|██████████| 16/16 [01:08<00:00,  4.25s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:08<00:00,  2.68s/it]
+                   all         70        232      0.949     0.0413      0.358      0.233
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       3/10         0G     0.9348       1.63      1.249         18        640: 100%|██████████| 16/16 [01:08<00:00,  4.29s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:08<00:00,  2.74s/it]
+                   all         70        232      0.954      0.249      0.528      0.371
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       4/10         0G     0.9475      1.499      1.298         16        640: 100%|██████████| 16/16 [01:10<00:00,  4.43s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:08<00:00,  2.76s/it]
+                   all         70        232      0.912      0.292      0.495      0.335
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       5/10         0G       0.93      1.412       1.25         12        640: 100%|██████████| 16/16 [01:09<00:00,  4.32s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:08<00:00,  2.78s/it]
+                   all         70        232      0.822      0.304      0.519      0.353
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       6/10         0G     0.9265      1.383      1.234         21        640: 100%|██████████| 16/16 [01:08<00:00,  4.26s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:08<00:00,  2.80s/it]
+                   all         70        232      0.878      0.588      0.709      0.506
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       7/10         0G     0.8935      1.278      1.232         13        640: 100%|██████████| 16/16 [01:10<00:00,  4.39s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:08<00:00,  2.76s/it]
+                   all         70        232       0.82      0.664      0.735      0.522
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       8/10         0G     0.8463      1.201      1.198         13        640: 100%|██████████| 16/16 [01:14<00:00,  4.68s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:08<00:00,  2.70s/it]
+                   all         70        232      0.898       0.65      0.763      0.542
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       9/10         0G     0.8436      1.158      1.177         14        640: 100%|██████████| 16/16 [01:08<00:00,  4.27s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:07<00:00,  2.63s/it]
+                   all         70        232      0.899      0.701      0.805      0.583
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      10/10         0G     0.7633      1.098      1.144         18        640: 100%|██████████| 16/16 [01:08<00:00,  4.29s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:07<00:00,  2.63s/it]
+                   all         70        232      0.941      0.697      0.824       0.61
+
+10 epochs completed in 0.220 hours.
+Optimizer stripped from runs\detect\eu_plate_model13\weights\last.pt, 6.2MB
+Optimizer stripped from runs\detect\eu_plate_model13\weights\best.pt, 6.2MB
+
+Validating runs\detect\eu_plate_model13\weights\best.pt...
+Ultralytics 8.3.47 🚀 Python-3.10.8 torch-2.5.1+cpu CPU (Intel Core(TM) 7 150U)
+Model summary (fused): 168 layers, 3,006,038 parameters, 0 gradients, 8.1 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 3/3 [00:16<00:00,  5.57s/it]
+                   all         70        232      0.877      0.744      0.817      0.619
+                     0         70         90      0.931      0.748       0.82      0.621
+                     1         68        142      0.823      0.739      0.814      0.617
+Speed: 1.0ms preprocess, 167.4ms inference, 0.0ms loss, 60.9ms postprocess per image
+Results saved to [1mruns\detect\eu_plate_model13[0m
+Weights saved at: <bound method Model.save of YOLO(
+  (model): DetectionModel(
+    (model): Sequential(
+      (0): Conv(
+        (conv): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn): BatchNorm2d(16, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+        (act): SiLU(inplace=True)
+      )
+      (1): Conv(
+        (conv): Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn): BatchNorm2d(32, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+        (act): SiLU(inplace=True)
+      )
+      (2): C2f(
+        (cv1): Conv(
+          (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(32, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (cv2): Conv(
+          (conv): Conv2d(48, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(32, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (m): ModuleList(
+          (0): Bottleneck(
+            (cv1): Conv(
+              (conv): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(16, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (cv2): Conv(
+              (conv): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(16, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+          )
+        )
+      )
+      (3): Conv(
+        (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+        (act): SiLU(inplace=True)
+      )
+      (4): C2f(
+        (cv1): Conv(
+          (conv): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (cv2): Conv(
+          (conv): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (m): ModuleList(
+          (0-1): 2 x Bottleneck(
+            (cv1): Conv(
+              (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(32, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (cv2): Conv(
+              (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(32, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+          )
+        )
+      )
+      (5): Conv(
+        (conv): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+        (act): SiLU(inplace=True)
+      )
+      (6): C2f(
+        (cv1): Conv(
+          (conv): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (cv2): Conv(
+          (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (m): ModuleList(
+          (0-1): 2 x Bottleneck(
+            (cv1): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (cv2): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+          )
+        )
+      )
+      (7): Conv(
+        (conv): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn): BatchNorm2d(256, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+        (act): SiLU(inplace=True)
+      )
+      (8): C2f(
+        (cv1): Conv(
+          (conv): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(256, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (cv2): Conv(
+          (conv): Conv2d(384, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(256, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (m): ModuleList(
+          (0): Bottleneck(
+            (cv1): Conv(
+              (conv): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (cv2): Conv(
+              (conv): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+          )
+        )
+      )
+      (9): SPPF(
+        (cv1): Conv(
+          (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (cv2): Conv(
+          (conv): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(256, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (m): MaxPool2d(kernel_size=5, stride=1, padding=2, dilation=1, ceil_mode=False)
+      )
+      (10): Upsample(scale_factor=2.0, mode='nearest')
+      (11): Concat()
+      (12): C2f(
+        (cv1): Conv(
+          (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (cv2): Conv(
+          (conv): Conv2d(192, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (m): ModuleList(
+          (0): Bottleneck(
+            (cv1): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (cv2): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+          )
+        )
+      )
+      (13): Upsample(scale_factor=2.0, mode='nearest')
+      (14): Concat()
+      (15): C2f(
+        (cv1): Conv(
+          (conv): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (cv2): Conv(
+          (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (m): ModuleList(
+          (0): Bottleneck(
+            (cv1): Conv(
+              (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(32, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (cv2): Conv(
+              (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(32, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+          )
+        )
+      )
+      (16): Conv(
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+        (act): SiLU(inplace=True)
+      )
+      (17): Concat()
+      (18): C2f(
+        (cv1): Conv(
+          (conv): Conv2d(192, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (cv2): Conv(
+          (conv): Conv2d(192, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (m): ModuleList(
+          (0): Bottleneck(
+            (cv1): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (cv2): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+          )
+        )
+      )
+      (19): Conv(
+        (conv): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+        (act): SiLU(inplace=True)
+      )
+      (20): Concat()
+      (21): C2f(
+        (cv1): Conv(
+          (conv): Conv2d(384, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(256, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (cv2): Conv(
+          (conv): Conv2d(384, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn): BatchNorm2d(256, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+          (act): SiLU(inplace=True)
+        )
+        (m): ModuleList(
+          (0): Bottleneck(
+            (cv1): Conv(
+              (conv): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (cv2): Conv(
+              (conv): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(128, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+          )
+        )
+      )
+      (22): Detect(
+        (cv2): ModuleList(
+          (0): Sequential(
+            (0): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (1): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (2): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (1): Sequential(
+            (0): Conv(
+              (conv): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (1): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (2): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (2): Sequential(
+            (0): Conv(
+              (conv): Conv2d(256, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (1): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (2): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1))
+          )
+        )
+        (cv3): ModuleList(
+          (0): Sequential(
+            (0): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (1): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (2): Conv2d(64, 2, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (1): Sequential(
+            (0): Conv(
+              (conv): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (1): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (2): Conv2d(64, 2, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (2): Sequential(
+            (0): Conv(
+              (conv): Conv2d(256, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (1): Conv(
+              (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn): BatchNorm2d(64, eps=0.001, momentum=0.03, affine=True, track_running_stats=True)
+              (act): SiLU(inplace=True)
+            )
+            (2): Conv2d(64, 2, kernel_size=(1, 1), stride=(1, 1))
+          )
+        )
+        (dfl): DFL(
+          (conv): Conv2d(16, 1, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        )
+      )
+    )
+  )
+)>/weights/
+Ultralytics 8.3.47 🚀 Python-3.10.8 torch-2.5.1+cpu CPU (Intel Core(TM) 7 150U)
+Model summary (fused): 168 layers, 3,006,038 parameters, 0 gradients, 8.1 GFLOPs
+[34m[1mval: [0mScanning C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\valid\labels.cache... 70 images, 0 backgrounds, 0 corru[0m
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 5/5 [00:16<00:00,  3.34s/it]
+                   all         70        232      0.877      0.744      0.817      0.619
+                     0         70         90      0.931      0.748       0.82      0.621
+                     1         68        142      0.823      0.739      0.814      0.617
+Speed: 1.2ms preprocess, 169.9ms inference, 0.0ms loss, 55.2ms postprocess per image
+Results saved to [1mruns\detect\eu_plate_model132[0m
+c:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\yolo_train.py:78: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  plt.legend(fontsize=12)
+
+image 1/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\0cacb08195a3e2d7_jpg.rf.9ff846bcac46a04e8627b4c90bb94adc.jpg: 640x640 1 0, 1 1, 707.5ms
+image 2/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\15a51e29f5ceffd8_jpg.rf.f0a185f81e89eb05b7ddb4de678e2c03.jpg: 640x640 1 0, 1 1, 354.6ms
+image 3/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\185fd6653258d3ed_jpg.rf.49f9b812b602dde44d4e16322416682d.jpg: 640x640 2 0s, 1 1, 387.3ms
+image 4/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\1a3e9d87d733ff7f_jpg.rf.50040209f417c434e9ab148c5135b166.jpg: 640x640 1 0, 1 1, 497.3ms
+image 5/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\1f0e643b125f00ec_jpg.rf.b1ed8dce59e0c3604dba97aeddee2aa0.jpg: 640x640 1 0, 3 1s, 521.5ms
+image 6/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\27798906120ea394_jpg.rf.467fffdcf80d750fd24a89d11329de13.jpg: 640x640 2 0s, 6 1s, 576.3ms
+image 7/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\2f3887024d298547_jpg.rf.286f10f0a2727862d2e389ca72c8dbe7.jpg: 640x640 1 0, 1 1, 310.8ms
+image 8/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\3241f09a8964ddfb_jpg.rf.c651c9c608cb1039c148425c2990406c.jpg: 640x640 4 0s, 5 1s, 318.0ms
+image 9/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\334f31e809ec9a77_jpg.rf.ef04f95536a1e25802f5b643712a296e.jpg: 640x640 1 0, 2 1s, 302.9ms
+image 10/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\33e0333ff031c4fb_jpg.rf.e84731a23f0f087e115bdd6b17941328.jpg: 640x640 1 0, 1 1, 389.5ms
+image 11/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\3feecc5809a29627_jpg.rf.eab13a3d09070e4f3bb278862e2f41c6.jpg: 640x640 1 0, 1 1, 374.3ms
+image 12/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\460753acbd6e6dad_jpg.rf.737bc4781c2d1161d4142de1d09ef503.jpg: 640x640 4 0s, 3 1s, 314.3ms
+image 13/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\4cb48c8bf41b70a4_jpg.rf.353aad932b92306552d6ad8945154f56.jpg: 640x640 1 0, 1 1, 308.6ms
+image 14/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\53925df03b471f5d_jpg.rf.c9b9caa7b1f43bd9182b74a039d5c231.jpg: 640x640 (no detections), 292.5ms
+image 15/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\53ad98b12752ad16_jpg.rf.9dabcaf1f3c5d3ea4879a7762b3db81b.jpg: 640x640 4 0s, 4 1s, 386.3ms
+image 16/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\5a3f94aa35766f31_jpg.rf.c15e292477ea64e6bb5f4308003830fe.jpg: 640x640 3 0s, 7 1s, 348.9ms
+image 17/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\6306fc7f3573eb70_jpg.rf.60c82136909e14dcaa36afb520531d0c.jpg: 640x640 2 1s, 335.7ms
+image 18/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\63d3df798bc8840f_jpg.rf.a820d76d2b187594b903e68ff9b8bd91.jpg: 640x640 1 0, 1 1, 286.8ms
+image 19/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\67c834b73882a9f9_jpg.rf.9ae3c632514a4260aa5c7e25c1546fdd.jpg: 640x640 1 0, 2 1s, 336.0ms
+image 20/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\747b0f12f54703ee_jpg.rf.eadef55b50b1d1ae46e8b6ed4163c8bc.jpg: 640x640 1 0, 3 1s, 401.4ms
+image 21/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\90596bf3313e72e3_jpg.rf.25f972f6ee9c67494f0cb7b22e58505f.jpg: 640x640 1 0, 3 1s, 355.0ms
+image 22/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\a67bc3f5f8650c73_jpg.rf.e2f200853d0cee23fcfe9be2bfa55513.jpg: 640x640 1 0, 1 1, 330.9ms
+image 23/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\a774a6f81fea258b_jpg.rf.8c5488bb8c65ef0a65ca87d22d90061f.jpg: 640x640 1 0, 1 1, 353.1ms
+image 24/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\a823532e163f5722_jpg.rf.e612199eba4a53b863d68146e081b4a4.jpg: 640x640 1 0, 3 1s, 305.3ms
+image 25/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\ad10c7d29f111692_jpg.rf.0318fc438a48d542a5e99e8c7ed4527d.jpg: 640x640 1 0, 1 1, 340.0ms
+image 26/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\aefe747315dd79fc_jpg.rf.6d99b455dac5694486c83de7839ce962.jpg: 640x640 1 0, 1 1, 309.7ms
+image 27/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\b25d7d2cb7abf86b_jpg.rf.6a9ffb8757a2d975c17b6aedd9fb402d.jpg: 640x640 3 0s, 1 1, 275.8ms
+image 28/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\be9fd0014b5a4f2a_jpg.rf.fed98068e01cb041c2bf562bd3207b72.jpg: 640x640 1 0, 2 1s, 345.6ms
+image 29/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\bf2f25f3ed9ff4d5_jpg.rf.82ea26b7fba0a3415fd21a1f6d71693a.jpg: 640x640 1 0, 1 1, 351.5ms
+image 30/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\c274e026ac907eb9_jpg.rf.0ca5e470b0f169a3acd0c316d7014606.jpg: 640x640 1 0, 2 1s, 310.5ms
+image 31/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\d7b71c9fd144d58d_jpg.rf.3ed5994b18522c94463fc191b8d55b3e.jpg: 640x640 1 0, 1 1, 438.4ms
+image 32/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\d7d49b1a3706f3eb_jpg.rf.bc28b7bc8d673e9b309140c0346e63f7.jpg: 640x640 1 0, 2 1s, 339.2ms
+image 33/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\de2b5afb7eda96cf_jpg.rf.85e016690f098771f90d7dc6c0dfdbb0.jpg: 640x640 1 0, 4 1s, 381.8ms
+image 34/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\e9fdd0a41cb61da6_jpg.rf.f193faac02b0022d714c45ce9442d65c.jpg: 640x640 1 0, 1 1, 565.5ms
+image 35/35 C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\test\images\ebaefbcb87bfa8a1_jpg.rf.47bb9fd8548f3aa3b598b44e12ef043a.jpg: 640x640 2 0s, 2 1s, 376.8ms
+Speed: 3.0ms preprocess, 375.1ms inference, 1.6ms postprocess per image at shape (1, 3, 640, 640)
+Results saved to [1mruns\detect\eu_plate_model133[0m
+Predictions saved in 'runs/detect/eu_plate_model'.
+Traceback (most recent call last):
+  File "c:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\yolo_train.py", line 130, in <module>
+    results.show()  # Show the image with predicted bounding boxes
+AttributeError: 'list' object has no attribute 'show'

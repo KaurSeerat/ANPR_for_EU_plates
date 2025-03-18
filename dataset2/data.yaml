@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['0']
+
+roboflow:
+  workspace: e-hh49k
+  project: european-license-plates-tjviy
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/e-hh49k/european-license-plates-tjviy/dataset/1

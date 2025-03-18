@@ -1,0 +1,149 @@
+New https://pypi.org/project/ultralytics/8.3.88 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.47 🚀 Python-3.10.14 torch-2.6.0+cpu CPU (Intel Core(TM) 7 150U)
+[34m[1mengine\trainer: [0mtask=detect, mode=train, model=yolov8n.pt, data=./dataset/data.yaml, epochs=30, time=None, patience=100, batch=8, imgsz=640, save=True, save_period=1, cache=False, device=None, workers=8, project=yolo-training, name=eu_plate_model7, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=None, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=yolo-training\eu_plate_model7
+Overriding model.yaml nc=80 with nc=2
+
+                   from  n    params  module                                       arguments
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]
+  2                  -1  1      7360  ultralytics.nn.modules.block.C2f             [32, 32, 1, True]
+  3                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]
+  4                  -1  2     49664  ultralytics.nn.modules.block.C2f             [64, 64, 2, True]
+  5                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]
+  6                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]
+  8                  -1  1    460288  ultralytics.nn.modules.block.C2f             [256, 256, 1, True]
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 12                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 15                  -1  1     37248  ultralytics.nn.modules.block.C2f             [192, 64, 1]
+ 16                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 18                  -1  1    123648  ultralytics.nn.modules.block.C2f             [192, 128, 1]
+ 19                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 21                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]
+ 22        [15, 18, 21]  1    751702  ultralytics.nn.modules.head.Detect           [2, [64, 128, 256]]
+Model summary: 225 layers, 3,011,238 parameters, 3,011,222 gradients, 8.2 GFLOPs
+
+Transferred 319/355 items from pretrained weights
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir yolo-training\eu_plate_model7', view at http://localhost:6006/
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mtrain: [0mScanning C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\train\labels.cache... 245 images, 0 backgrounds, [0m
+[34m[1mval: [0mScanning C:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\dataset\valid\labels.cache... 70 images, 0 backgrounds, 0 c[0m
+Plotting labels to yolo-training\eu_plate_model7\labels.jpg...
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+[34m[1moptimizer:[0m AdamW(lr=0.001667, momentum=0.9) with parameter groups 57 weight(decay=0.0), 64 weight(decay=0.0005), 63 bias(decay=0.0)
+[34m[1mTensorBoard: [0mmodel graph visualization added ✅
+Image sizes 640 train, 640 val
+Using 0 dataloader workers
+Logging results to [1myolo-training\eu_plate_model7[0m
+Starting training for 30 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       1/30         0G     0.9942      2.382      1.313         30        640: 100%|██████████| 31/31 [01:35<00:00,  3.09s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 5/5 [00:13<00:00,  2.63s/it]
+                   all         70        232      0.913      0.217      0.317      0.211
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       2/30         0G     0.9996      1.566      1.335         23        640: 100%|██████████| 31/31 [01:42<00:00,  3.30s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 5/5 [00:12<00:00,  2.41s/it]
+                   all         70        232      0.916      0.264      0.614      0.422
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       3/30         0G      1.103    
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%
+                   all         70        232      0.626      0.538      0.644      0.418
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       4/30         0G      1.079       1.47      1.379         24        640: 100%|██████████
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%
+                   all         70        232      0.709      0.569      0.689      0.464
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       5/30         0G      1.027      1.388      1.327         22        640: 100%|██████████
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%
+                   all         70        232      0.686      0.562      0.627      0.396
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       6/30         0G      1.086      1.398      1.383         24        640: 100%|██████████
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%
+                   all         70        232      0.832      0.512      0.622      0.418
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       7/30         0G       1.05       1.29      1.349         30        640: 100%|██████████
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%
+                   all         70        232      0.704      0.509      0.559      0.345
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       8/30         0G      1.003      1.267      1.334         19        640: 100%|██████████
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%
+                   all         70        232      0.891       0.61      0.744      0.497
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       9/30         0G      1.004      1.277      1.344         18        640: 100%|██████████
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%
+                   all         70        232      0.773      0.697      0.724      0.465
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      10/30         0G     0.9849      1.177      1.295         34        640: 100%|██████████
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%
+                   all         70        232      0.794      0.681      0.743      0.507
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      11/30         0G     0.9264       1.13      1.263         39        640:  55%|█████▍    
+Traceback (most recent call last):
+  File "c:\Users\seera\OneDrive - University of East Anglia\ANPR_for_EU_plates\yolo_train.py", line 37, in <module>
+    train_results = model.train(
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\engine\model.py", line 806, in train
+    self.trainer.train()
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\engine\trainer.py", line 207, in train
+    self._do_train(world_size)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\engine\trainer.py", line 380, in _do_train
+    self.loss, self.loss_items = self.model(batch)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\nn\tasks.py", line 111, in forward
+    return self.loss(x, *args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\nn\tasks.py", line 292, in loss
+    preds = self.forward(batch["img"]) if preds is None else preds
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\nn\tasks.py", line 112, in forward
+    return self.predict(x, *args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\nn\tasks.py", line 130, in predict
+    return self._predict_once(x, profile, visualize, embed)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\nn\tasks.py", line 151, in _predict_once
+    x = m(x)  # run
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\nn\modules\block.py", line 238, in forward
+    y.extend(m(y[-1]) for m in self.m)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\nn\modules\block.py", line 238, in <genexpr>
+    y.extend(m(y[-1]) for m in self.m)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\nn\modules\block.py", line 347, in forward
+    return x + self.cv2(self.cv1(x)) if self.add else self.cv2(self.cv1(x))
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\ultralytics\nn\modules\conv.py", line 50, in forward
+    return self.act(self.bn(self.conv(x)))
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\modules\activation.py", line 432, in forward
+    return F.silu(input, inplace=self.inplace)
+  File "C:\Users\seera\anaconda3\envs\myenv\lib\site-packages\torch\nn\functional.py", line 2379, in silu
+    return torch._C._nn.silu_(input)
+KeyboardInterrupt

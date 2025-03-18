@@ -1,0 +1,16 @@
+{"time":"2025-02-17T18:55:24.8873291Z","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2025-02-17T18:55:24.8879907Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\seera\\OneDrive - University of East Anglia\\ANPR_for_EU_plates\\wandb\\run-20250217_185524-cfpv8ae5\\logs\\debug-core.log"}
+{"time":"2025-02-17T18:55:25.6908048Z","level":"INFO","msg":"created new stream","id":"cfpv8ae5"}
+{"time":"2025-02-17T18:55:25.6920712Z","level":"INFO","msg":"writer: Do: started","stream_id":"cfpv8ae5"}
+{"time":"2025-02-17T18:55:25.6920712Z","level":"INFO","msg":"stream: started","id":"cfpv8ae5"}
+{"time":"2025-02-17T18:55:25.6920712Z","level":"INFO","msg":"handler: started","stream_id":"cfpv8ae5"}
+{"time":"2025-02-17T18:55:25.6920712Z","level":"INFO","msg":"sender: started","stream_id":"cfpv8ae5"}
+{"time":"2025-02-17T18:55:26.3482542Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-17T19:10:58.8463406Z","level":"INFO","msg":"stream: closing","id":"cfpv8ae5"}
+{"time":"2025-02-17T19:10:58.8639155Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-17T19:10:58.8659663Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-17T19:10:59.9594904Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-17T19:11:00.2933904Z","level":"INFO","msg":"handler: closed","stream_id":"cfpv8ae5"}
+{"time":"2025-02-17T19:11:00.2933904Z","level":"INFO","msg":"writer: Close: closed","stream_id":"cfpv8ae5"}
+{"time":"2025-02-17T19:11:00.2938995Z","level":"INFO","msg":"sender: closed","stream_id":"cfpv8ae5"}
+{"time":"2025-02-17T19:11:00.2938995Z","level":"INFO","msg":"stream: closed","id":"cfpv8ae5"}
