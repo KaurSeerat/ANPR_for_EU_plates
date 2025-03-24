@@ -87,7 +87,7 @@ def preview_dataset(images, labels, num_samples=5):
 
 if __name__ == "__main__":       
 # Example usage
-    dataset_path = "./dataset/"
+    dataset_path = "./dataset2/"
 
     X_train, y_train = load_yolo_images_and_labels(
         os.path.join(dataset_path, "train", "images"),
