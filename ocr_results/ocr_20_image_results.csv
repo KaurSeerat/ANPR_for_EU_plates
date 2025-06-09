@@ -1,0 +1,21 @@
+Image,Ground Truth,OCR Output,Character Accuracy (%)
+1ca1155083156d72_jpg.rf.be0d654ae14503ba92b55b484e3c96be.jpg,OUTSTDN,QUTSTDN,85.71
+1ead26febde18ce9_jpg.rf.b5935dfe4c2324581a18b32202b9f969.jpg,ZENDOG,,0.0
+4cb48c8bf41b70a4_jpg.rf.353aad932b92306552d6ad8945154f56.jpg,TOY DR,TOYDR,90.91
+4e2cb95b9c509b10_jpg.rf.f5ca3eb3fd46f5d31faa12a94af008af.jpg,GN64 OTP,GNETF,46.15
+747b0f12f54703ee_jpg.rf.eadef55b50b1d1ae46e8b6ed4163c8bc.jpg,AI7 OVF,AITOVE,61.54
+car5.jpeg,59 CADI,T59CAOI,71.43
+dayride_type1_001-mp4-t-85_jpg.rf.26ce6920fb000e3befe633d9072dd087.jpg,B 99 BNX,B99BNX,85.71
+dayride_type1_001-mp4-t-1198_jpg.rf.70c7f03a0107b39af396951d803f13dd.jpg,B 01 XEN,FBO1XEN,66.67
+german-car-registration-license-plate-cologne-koln-germany-europe-C6ENJN.jpg,K SC 124,BKSC424,66.67
+dayride_type1_001-mp4-t-892_jpg.rf.9ad729b46d2c6a9046a8af30d95643b4.jpg,B 305 CIL,305CIL,80.0
+a929dc75c20da7d8_jpg.rf.38b7b8db79e9b1da92fd90eeaeac8815.jpg,HAMSTUR,HAMSTUR,100.0
+33fa5185-0286-4e8f-b775-46162eba39d4.jpeg,R8Z D503,RRZOS03,53.33
+eu4.jpeg,BIMMIAN,BBINMIAN,80.0
+images.jpg,BA24 NED,BA24NED,93.33
+licensed_car85.jpeg,TN 52 U 1580,ATA 52U1580,78.26
+licensed_car148.jpeg,HP SX 4000,BHPSX40G6,63.16
+licensed_car171.jpeg,FLU55H,FLUSSH,66.67
+dayride_type1_002-mp4-t-822_jpg.rf.31fdbebec50d5455041394311048ac3f.jpg,B 839 HAR,,0.0
+pl_license_plate_343_jpg.rf.bdcebdcca60abbeee8045b58e8ce4f17.jpg,E3 4230,BE34230,85.71
+pl_license_plate_488_jpg.rf.6ad8130c0b8291f97e3e684b215fd598.jpg,KVT 9263,KVT9263,93.33

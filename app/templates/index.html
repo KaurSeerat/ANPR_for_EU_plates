@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoScanEU | European ANPR System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-car-alt"></i>
+                <h1>AutoScanEU</h1>
+            </div>
+            <h2>European Licence Plate Recognition System</h2>
+            <p class="description">
+                Upload an image of a vehicle, and our AI-powered system will automatically detect and extract 
+                European licence plates with high accuracy. Results appear in seconds.
+            </p>
+        </header>
+
+        <form action="/" method="POST" enctype="multipart/form-data" id="uploadForm">
+            <div class="upload-area">
+                <input type="file" name="file" id="file" class="file-input" accept="image/*" required>
+                <label for="file" class="upload-label">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <span class="upload-text">Choose an image or drag & drop</span>
+                    <span class="upload-hint">Supports JPG, PNG</span>
+                </label>
+            </div>
+            <button type="submit" class="btn">
+                <i class="fas fa-search"></i> Detect Plates
+            </button>
+            {% if error %}
+                <div class="error-message">{{ error }}</div>
+            {% endif %}
+        </form>
+
+        <div class="results">
+            {% if uploaded_file and uploaded_file_url %}
+                <div class="result-card">
+                    <h3 class="result-title">
+                        <i class="fas fa-image"></i> Original Image
+                    </h3>
+                    <div class="preview-container">
+                        <img src="{{ uploaded_file_url }}" class="preview" alt="Uploaded vehicle image">
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if processed_file and processed_file_url %}
+                <div class="result-card">
+                    <h3 class="result-title">
+                        <i class="fas fa-qrcode"></i> Processed Image
+                    </h3>
+                    <div class="preview-container">
+                        <img src="{{ processed_file_url }}" class="preview" alt="Processed image with plate detection">
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3 class="result-title">
+                        <i class="fas fa-list-ol"></i> Detected Plates
+                    </h3>
+                    <div class="plates-container">
+                        {% if detected_texts %}
+                            <div class="plates-title">We found plate(s):</div>
+                            <div class="plate-list">
+                                {% for text in detected_texts %}
+                                    <div class="plate-item">
+                                        <i class="fas fa-car"></i> {{ text }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="no-plates">No licence plates were detected in this image.</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+# Ignore large models
+*.pt
+*.pth
+
+# Ignore images, uploads, etc.
+
+*.bmp
+*.gif
+*.mp4
+*.avi
+
+# Ignore folders
+
+
+models/wandb
+
+model/yolo-training/eu_plate_model
+model/yolo-training/eu_plate_model2
+model/yolo-training/eu_plate_model3
+model/yolo-training/eu_plate_model4
+model/yolo-training/eu_plate_model5
+model/yolo-training/eu_plate_model6
+model/yolo-training/eu_plate_model7
+model/yolo-training/eu_plate_model8
+model/yolo-training/eu_plate_model9
+model/yolo-training/eu_plate_model10
+model/yolo-training/eu_plate_model11
+model/yolo-training/eu_plate_model12
+model/yolo-training/eu_plate_model13
+data/dataset1
+data/dataset2
+
+# Ignore virtual environments
+venv/
+myenv/
