@@ -1,9 +1,9 @@
 # Ignore large models
-*.pt
+
 *.pth
 
 # Ignore images, uploads, etc.
-
+*.pt
 *.bmp
 *.gif
 *.mp4
