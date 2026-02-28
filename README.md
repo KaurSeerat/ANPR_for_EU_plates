@@ -1,35 +1,106 @@
 # AutoScanEU - European Licence Plate Recogntion System
 
-**AutoScanEU** is an AI-powered web application for automatic licence plate recognition (ANPR) across European countries. It uses a YOLOv8-based object detector and Tesseract OCR to identify and extract licence plate numbers from vehicle images.
+**AutoScanEU** is an end-to-end Automatic Number Plate Recognition (ANPR) system designed for European vehicle plates.
+The system integrates deep learning-based object detection (YOLOv8) with Optical Character Recognition (Tesseract OCR) and is deployed via a Flask web application.
+This project demonstrates data cleaning, experimental evaluation, performance benchmarking, and analytical problem solving within a computer vision pipeline.
 
-## Features
-- Upload vehicle images via a simple web interface.
-- Detects number plates in real-time using a YOLOv8 model.
-- Performs OCR to extract plate numbers from detected regions.
-- Displays original, processed images and recognised plates.
-- Supports evaluation of OCR accuracy and common errors.
-- Interactive drag & drop UI for easy use.
+---
 
-## Tech Stack
-**Frontend**: HTML, CSS, JavaScript
-**Backened**: Flask (Python)
-**Model**: YOLOv8 (from Ultralytics) for plate detection
-**OCR**: Tesseract OCR via `pytesseract`
-**Visualisation**: `matplotlib`, `OpenCV`
+## 🚀 Project Overview
 
-## To run the application
-1. **Install Dependencies**  
-   You can install all dependencies using pip:
-  
+This project focuses on:
 
-   ```bash
-    pip install flask wandb ultralytics pandas opencv-python numpy matplotlib pytesseract
+- Merging and cleaning 1,800+ annotated images to improve model generalisation
+- Comparing model performance across multiple datasets
+- Optimising detection through hyperparameter tuning
+- Designing an OCR preprocessing pipeline
+- Conducting structured error analysis
+- Deploying a real-time web interface
 
+---
+
+## 📊 Final Performance
+
+After dataset merging and optimisation:
+
+- **mAP@50:** 0.97  
+- **Precision:** 0.95  
+- **Recall:** 0.94  
+- **OCR Mean Character Accuracy:** 68.43%
+
+Dataset merging significantly improved detection accuracy and generalisation.
+
+### Performance Comparison
+
+| Dataset       | mAP@50 | Precision | Recall |
+|---------------|--------|-----------|--------|
+| Dataset 1     | 0.82   | 0.89      | 0.73   |
+| Dataset 2     | 0.87   | 0.89      | 0.76   |
+| Merged Data   | 0.97   | 0.95      | 0.94   |
+
+---
+
+## 🔎 Key Analytical Insights
+
+- Dataset diversity directly improved generalisation performance.
+- Merging datasets reduced false negatives and improved recall from 0.73 → 0.94.
+- OCR preprocessing (thresholding + morphological operations) improved character accuracy by ~15%.
+- Most common character confusions:
+  - 8 → B  
+  - 0 → D  
+  - S → 5  
+- Performance degradation was strongly linked to lighting variation, motion blur, and perspective distortion.
+
+---
+
+## 🧠 System Architecture
+
+1. User uploads vehicle image via web interface  
+2. YOLOv8 detects licence plate  
+3. Plate region is cropped and preprocessed  
+4. Tesseract OCR extracts alphanumeric text  
+5. Recognised plate and bounding box displayed in browser  
+
+---
+
+## 🛠 Tech Stack
+
+### Backend
+- Python
+- Flask
+
+### Machine Learning & Computer Vision
+- YOLOv8 (Ultralytics)
+- OpenCV
+- Tesseract OCR (pytesseract)
+
+### Data & Analysis
+- Pandas
+- NumPy
+- Matplotlib
+- Weights & Biases (experiment tracking)
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
+
+---
+
+## 💻 Running the Application
+
+### 1. Install Dependencies
+
+```bash
+pip install flask wandb ultralytics pandas opencv-python numpy matplotlib pytesseract
+```
 2. To run the code in terminal, use command 'python app.py' or run app.py directly using run in VS code
 
-3. Access app http://localhost:5000 
+3. Access app on local browser http://localhost:5000
 
-## Project Structure
+---
+
+## Project Structure 
 ```bash 
 ANPR_for_EU_plates/
     app/
